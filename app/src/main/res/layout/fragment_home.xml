@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/text_home">
+
+
+
+
+    <RelativeLayout
+        android:id="@+id/home_layout1"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_270sdp"
+        android:background="#cbc2c2">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_120sdp"
+            android:background="@drawable/layout_bg">
+            <ImageView
+                android:id="@+id/home_user"
+                android:layout_width="@dimen/_70sdp"
+                android:layout_height="@dimen/_70sdp"
+                android:background="@drawable/user"
+                android:layout_alignParentRight="true"/>
+            <ImageView
+                android:id="@+id/home_notification"
+                android:layout_width="@dimen/_30sdp"
+                android:layout_height="@dimen/_30sdp"
+                android:background="@drawable/notification"
+                android:layout_marginLeft="@dimen/_210sdp"/>
+            <ImageView
+                android:layout_width="@dimen/_120sdp"
+                android:layout_height="@dimen/_30sdp"
+                android:background="@drawable/logo"
+                android:layout_marginTop="@dimen/_60sdp"
+                android:layout_marginLeft="@dimen/_20sdp"/>
+            <ImageView
+                android:id="@+id/home_menu"
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="@dimen/_20sdp"
+                android:background="@drawable/menu"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_10sdp"/>
+
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_120sdp">
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_margin="@dimen/_16sdp"
+
+            app:cardCornerRadius="@dimen/_8sdp">
+
+            <com.smarteist.autoimageslider.SliderView
+                android:id="@+id/imageSlider"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_125sdp"
+                app:sliderAnimationDuration="1000"
+                app:sliderAutoCycleDirection="back_and_forth"
+                app:sliderAutoCycleEnabled="true"
+                app:sliderCircularHandlerEnabled="true"
+                app:sliderIndicatorAnimationDuration="1000"
+                app:sliderIndicatorGravity="center_horizontal|bottom"
+                app:sliderIndicatorMargin="@dimen/_15sdp"
+                app:sliderIndicatorOrientation="horizontal"
+                app:sliderIndicatorPadding="@dimen/_3sdp"
+                app:sliderIndicatorRadius="@dimen/_2sdp"
+                app:sliderIndicatorSelectedColor="#5A5A5A"
+                app:sliderIndicatorUnselectedColor="#FFF"
+                app:sliderScrollTimeInSec="1"
+                app:sliderStartAutoCycle="true" />
+
+        </androidx.cardview.widget.CardView>
+        </RelativeLayout>
+    </RelativeLayout>
+   <ScrollView
+       android:layout_below="@id/home_layout1"
+       android:layout_width="match_parent"
+       android:layout_height="match_parent">
+
+       <RelativeLayout
+           android:layout_width="match_parent"
+           android:layout_height="match_parent">
+
+           <RelativeLayout
+               android:layout_width="match_parent"
+               android:layout_height="@dimen/_90sdp">
+
+               <TextView
+                   android:id="@+id/home_doctor_visit"
+                   android:layout_width="@dimen/_230sdp"
+                   android:layout_height="wrap_content"
+                   android:text="@string/title_visit"
+                   android:textSize="@dimen/_15sdp"
+                   android:fontFamily="@font/montserrat_medium"
+                   android:background="@drawable/edt_bg"
+                   android:padding="@dimen/_10sdp"
+                   android:layout_marginTop="@dimen/_20sdp"
+                   android:layout_marginLeft="@dimen/_50sdp"
+                   android:textAlignment="textEnd"
+                   android:visibility="visible"
+                   />
+               <ImageView
+                   android:id="@+id/home_visit_dr1"
+                   android:layout_width="@dimen/_70sdp"
+                   android:layout_height="@dimen/_70sdp"
+                   android:background="@drawable/visit_dr"
+                   android:layout_marginLeft="@dimen/_30sdp"
+                   android:layout_marginTop="@dimen/_5sdp"
+                   android:visibility="visible"
+                   />
+
+               <RelativeLayout
+                   android:layout_width="match_parent"
+                   android:layout_height="@dimen/_90sdp"
+                   android:visibility="invisible"
+                   android:id="@+id/home_visit_layout"
+                   >
+
+               <ImageView
+                   android:id="@+id/home_doctor_visit_no"
+                   android:layout_width="@dimen/_80sdp"
+                   android:layout_height="@dimen/_40sdp"
+                   android:background="@drawable/no"
+                   android:layout_marginTop="@dimen/_20sdp"
+                   android:layout_marginLeft="@dimen/_165sdp"
+                   />
+
+               <ImageView
+                   android:id="@+id/home_doctor_visit_yes"
+                   android:layout_width="@dimen/_80sdp"
+                   android:layout_height="@dimen/_40sdp"
+                   android:background="@drawable/yes"
+                   android:layout_marginTop="@dimen/_20sdp"
+                   android:layout_marginLeft="@dimen/_110sdp"
+                   />
+                   <ImageView
+                       android:id="@+id/home_visit_dr2"
+                       android:layout_width="@dimen/_70sdp"
+                       android:layout_height="@dimen/_70sdp"
+                       android:background="@drawable/visit_dr"
+                       android:layout_marginLeft="@dimen/_60sdp"
+                       android:layout_marginTop="@dimen/_5sdp"
+                       />
+               </RelativeLayout>
+
+           </RelativeLayout>
+
+
+
+
+
+    <RelativeLayout
+        android:id="@+id/home_layout3"
+        android:layout_marginTop="@dimen/_60sdp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/_40sdp">
+        <androidx.cardview.widget.CardView
+            android:layout_width="@dimen/_320sdp"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="@dimen/_15sdp"
+
+            >
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_130sdp"
+                android:paddingTop="@dimen/_5sdp"
+                android:background="@drawable/gradian_clr"
+                android:paddingLeft="@dimen/_30sdp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/title_your_health"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:id="@+id/home_card2_your_health"
+                    android:fontFamily="@font/montserrat_bold"
+                    android:textColor="#ffffff"
+                    android:layout_centerHorizontal="true"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/title_bmi"
+                    android:layout_marginTop="@dimen/_6sdp"
+                    android:layout_below="@id/home_card2_your_health"
+                    android:id="@+id/home_card2_bmi"
+                    android:fontFamily="@font/montserrat_medium"
+                    android:textColor="#ffffff"
+                    android:layout_marginLeft="@dimen/_50sdp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="45"
+                    android:layout_marginTop="@dimen/_6sdp"
+                    android:id="@+id/home_card2_bmi_rate"
+                    android:layout_below="@id/home_card2_your_health"
+                    android:layout_toRightOf="@id/home_card2_bmi"
+                    android:fontFamily="@font/montserrat_medium"
+                    android:paddingLeft="@dimen/_30sdp"
+                    android:textColor="#ffffff"
+                    android:layout_centerHorizontal="true"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Normal"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:paddingTop="@dimen/_5sdp"
+                    android:paddingBottom="@dimen/_5sdp"
+                    android:paddingLeft="@dimen/_10sdp"
+                    android:paddingRight="@dimen/_10sdp"
+                    android:background="@drawable/text_bg"
+                    android:layout_below="@id/home_card2_bmi"
+                    android:id="@+id/home_card2_bmi_status"
+                    android:fontFamily="@font/montserrat_medium"
+                    android:textColor="#ffffff"
+                    android:layout_centerHorizontal="true"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/title_blood"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:id="@+id/home_card2_blood_pressure"
+                    android:fontFamily="@font/montserrat_medium"
+                    android:textColor="#ffffff"
+                    android:layout_below="@id/home_card2_bmi_status"/>
+
+                <TextView
+                    android:id="@+id/home_card2_sugar_level"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/home_card2_bmi_status"
+                    android:layout_marginLeft="@dimen/_100sdp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:fontFamily="@font/montserrat_medium"
+                    android:text="@string/title_sugar"
+                    android:textColor="#ffffff" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="70"
+                    android:id="@+id/home_card2_blood_pressure_rate"
+                    android:layout_below="@id/home_card2_blood_pressure"
+                    android:fontFamily="@font/montserrat_medium"
+                    android:textColor="#ffffff"
+                    android:layout_marginLeft="@dimen/_30sdp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="110"
+                    android:id="@+id/home_card2_sugar_level_rate"
+                    android:layout_below="@id/home_card2_blood_pressure"
+                    android:fontFamily="@font/montserrat_medium"
+                    android:textColor="#ffffff"
+                    android:layout_marginLeft="@dimen/_130sdp"/>
+
+
+            </RelativeLayout>
+
+        </androidx.cardview.widget.CardView>
+    </RelativeLayout>
+           <RelativeLayout
+               android:layout_marginTop="@dimen/_240sdp"
+               android:layout_width="match_parent"
+               android:padding="@dimen/_30sdp"
+               android:layout_height="match_parent">
+               <Button
+                   android:layout_width="@dimen/_75sdp"
+                   android:layout_height="@dimen/_52sdp"
+                   android:id="@+id/home_btn_livechat"
+                   android:fontFamily="@font/montserrat_bold"
+                   android:background="@drawable/livechat"
+                   android:textColor="@color/colorwhite"/>
+
+           </RelativeLayout>
+       </RelativeLayout>
+   </ScrollView>
+        </RelativeLayout>

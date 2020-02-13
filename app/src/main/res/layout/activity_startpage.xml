@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Startpage"
+    android:background="@drawable/animation_bg">
+
+    <ImageView
+        android:id="@+id/radssoon_symbol"
+        android:layout_width="@dimen/_67sdp"
+        android:layout_height="@dimen/_30sdp"
+        android:layout_marginStart="@dimen/_120sdp"
+        android:layout_marginLeft="@dimen/_220sdp"
+        android:layout_marginTop="@dimen/_480sdp"
+        android:src="@drawable/radssoon_r"
+        android:alpha="0.70"/>
+
+    <ImageView
+        android:id="@+id/above_whiteline"
+        android:layout_width="@dimen/_74sdp"
+        android:layout_height="@dimen/_10sdp"
+        android:layout_marginStart="@dimen/_120sdp"
+        android:layout_marginLeft="@dimen/_200sdp"
+        android:layout_marginTop="@dimen/_470sdp"
+        android:src="@drawable/radssoon_line_white"
+        android:alpha="0.70"/>
+    <ImageView
+        android:id="@+id/below_whiteline"
+        android:layout_width="@dimen/_74sdp"
+        android:layout_height="@dimen/_10sdp"
+        android:layout_marginStart="@dimen/_110sdp"
+        android:layout_marginLeft="@dimen/_200sdp"
+        android:layout_marginTop="@dimen/_510sdp"
+        android:src="@drawable/radssoon_line_white"
+        android:alpha="0.70"/>
+    <TextView
+        android:id="@+id/poweredby_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Powered by"
+        android:layout_marginStart="@dimen/_100sdp"
+        android:layout_marginLeft="@dimen/_100sdp"
+        android:layout_marginTop="@dimen/_440sdp"
+        android:textColor="@color/colorwhite"
+        android:textStyle="normal"
+        android:fontFamily="@font/montserrat_medium"
+        android:textSize="@dimen/_20sdp"
+        android:alpha="0.50"
+        />
+
+</RelativeLayout>

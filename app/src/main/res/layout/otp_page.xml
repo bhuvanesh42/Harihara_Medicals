@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".otp_page">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_300sdp"
+            >
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/_250sdp"
+                android:background="@drawable/path_7"/>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_centerHorizontal="true"
+                android:src="@drawable/patient"/>
+
+        </RelativeLayout>
+         <androidx.cardview.widget.CardView
+            android:layout_width="@dimen/_280sdp"
+            android:layout_height="@dimen/_150sdp"
+            android:layout_centerInParent="true"
+            app:cardBackgroundColor="#3377ff"
+             app:cardCornerRadius="@dimen/_20sdp">
+
+          <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Enter OTP"
+            android:textColor="@color/colorwhite"
+            android:layout_margin="@dimen/_10sdp"
+            android:textSize="@dimen/_15sdp"
+              android:paddingLeft="@dimen/_25sdp"
+              android:fontFamily="@font/montserrat_medium"
+             android:id="@+id/Card_text"/>
+             <EditText
+                 android:layout_width="@dimen/_220sdp"
+                 android:layout_height="wrap_content"
+                 android:layout_centerInParent="true"
+                 android:id="@+id/enter_otp"
+                 android:padding="@dimen/_10sdp"
+                 android:layout_marginLeft="@dimen/_30sdp"
+                 android:maxLines="1"
+
+                 android:inputType="number"
+                 android:background="@drawable/edt_bg"
+                 android:layout_marginTop="@dimen/_40sdp"
+                 android:fontFamily="@font/montserrat_medium"
+                 />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Resend"
+                android:textColor="@color/colorwhite"
+                android:textSize="@dimen/_15sdp"
+                android:layout_marginTop="@dimen/_90sdp"
+                android:layout_marginLeft="@dimen/_30sdp"
+                android:id="@+id/resend_text"
+                android:fontFamily="@font/montserrat_medium"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Submit"
+                android:textColor="@color/colorwhite"
+                android:fontFamily="@font/montserrat_medium"
+                android:textSize="@dimen/_15sdp"
+                android:layout_marginTop="@dimen/_90sdp"
+                android:layout_marginLeft="@dimen/_190sdp"
+                android:id="@+id/submit_text"/>
+             <TextView
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:text="Edit Number?"
+                 android:textSize="@dimen/_15sdp"
+                 android:textColor="@color/colorwhite"
+                 android:fontFamily="@font/montserrat_medium"
+                 android:id="@+id/otp_num_edt"
+                 android:layout_marginTop="@dimen/_115sdp"
+                 android:paddingLeft="@dimen/_30sdp"
+                 android:alpha="0.80"/>
+
+
+        </androidx.cardview.widget.CardView>
+
+</RelativeLayout>
