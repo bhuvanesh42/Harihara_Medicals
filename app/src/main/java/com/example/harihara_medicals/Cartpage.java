@@ -10,7 +10,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 
-public class Cartpage extends AppCompatActivity {
+public class  Cartpage extends AppCompatActivity {
     TextView cart_tab_name,cart_tab_price,cart_tab_count,cart_detailed_price,cart_total_price;
     public  RecyclerView recyclerView;
     private RecyclerView.LayoutManager mLayoutManager;

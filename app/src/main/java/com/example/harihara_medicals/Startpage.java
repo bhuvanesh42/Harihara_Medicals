@@ -26,12 +26,7 @@ public class Startpage extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        FirebaseMessaging.getInstance().subscribeToTopic("Harihara_Medicals").addOnSuccessListener(new OnSuccessListener<Void>() {
-            @Override
-            public void onSuccess(Void aVoid) {
-                Toast.makeText(getApplicationContext(),"Success",Toast.LENGTH_LONG).show();
-            }
-        });
+        FirebaseMessaging.getInstance().subscribeToTopic("Harihara_Medicals");
 
         setContentView(R.layout.activity_startpage);
         radssoonSymbol = (ImageView) findViewById(R.id.radssoon_symbol);

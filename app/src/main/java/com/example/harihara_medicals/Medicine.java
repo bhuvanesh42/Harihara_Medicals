@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.TextView;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -40,27 +41,26 @@ public class Medicine extends AppCompatActivity {
     private void fetchJSON() {
 
         Retrofit retrofit=new Retrofit.Builder()
-                .baseUrl(Productapi.JSONURL)
+                .baseUrl(Productapi.URL)
                 .addConverterFactory(ScalarsConverterFactory.create())
                 .build();
         Productapi api=retrofit.create(Productapi.class);
+       /* Productapi api =ApiUtils.getUrl();*/
         Call<String> call=api.getMedicen();
-        Log.i("call","done");
+        log("step o");
         call.enqueue(new Callback<String>() {
             @Override
 
             public void onResponse(Call<String> call, Response<String> response) {
 
-                Log.i("Responsestring", response.body().toString());
-                Log.d("over","suc");
+                log("step 1");
                 if (response.isSuccessful()){
                     if (response.body()!=null){
                         String jsonresponse=response.body().toString();
                         writeRecycler(jsonresponse);
                     }
                     else {
-                        Log.i("onemptyresponce","empty response");
-                    }
+                        log("step 2");                    }
                 }
             }
             @Override
@@ -73,9 +73,11 @@ public class Medicine extends AppCompatActivity {
 
     private void writeRecycler(String response) {
         try {
+            log("step 3");
             JSONObject obj=new JSONObject(response);
             ArrayList<Medicien_list> medicienlistArrayList=new ArrayList<>();
             JSONArray dataarray=obj.getJSONArray("product");
+            log("step 4");
                 for(int i=0;i<dataarray.length();i++){
                     Medicien_list medicien=new Medicien_list();
                     JSONObject dataojb=dataarray.getJSONObject(i);
@@ -93,6 +95,10 @@ public class Medicine extends AppCompatActivity {
             e.printStackTrace();
         }
     }
+    private void log(String message) {
+        Log.e(getClass().getSimpleName(),message);
+    }
+
 
 
 }

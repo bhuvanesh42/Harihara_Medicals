@@ -54,7 +54,14 @@ public class General_doctor extends AppCompatActivity {
 
     private void getResponse() {
 
-        Productapi api =ApiUtils.getProductapi();
+      Retrofit retrofit = new  Retrofit.Builder()
+                .baseUrl(Productapi.URL)
+                .addConverterFactory(ScalarsConverterFactory.create())
+                .build();
+        Productapi api =retrofit.create(Productapi.class);
+
+        /*Productapi api =ApiUtils.getUrl();*/
+
         Call<String> call=api.getDoctors();
         call.enqueue(new Callback<String>() {
             @Override

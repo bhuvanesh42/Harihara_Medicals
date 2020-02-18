@@ -14,6 +14,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 
+import com.example.harihara_medicals.Ar_product;
 import com.example.harihara_medicals.Medicine;
 import com.example.harihara_medicals.R;
 import com.example.harihara_medicals.ui.Calender.CalenderFragment;
@@ -32,12 +33,6 @@ private EditText product_search;
         btn_medicine.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-               /* Fragment newFragment = new MedicienFragment();
-                FragmentTransaction transaction = getFragmentManager().beginTransaction();
-
-                transaction.replace(R.id.nav_host_fragment, newFragment);
-
-                transaction.commit();*/
                startActivity( new Intent(getActivity(),Medicine.class));
 
             }
@@ -48,6 +43,13 @@ private EditText product_search;
             public void onClick(View v) {
                 startActivity(new Intent(getActivity(),Medicine.class));
            }
+        });
+        btn_health=view.findViewById(R.id.product_btn_health_wealth);
+        btn_health.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getActivity(), Ar_product.class));
+            }
         });
         return view;
 

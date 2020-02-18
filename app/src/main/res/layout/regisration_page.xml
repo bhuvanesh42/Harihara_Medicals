@@ -82,13 +82,20 @@
             android:textSize="@dimen/_15sdp"
             android:fontFamily="@font/montserrat_medium"
             android:layout_marginLeft="@dimen/_30sdp"/>
+            <RadioGroup
+                android:id="@+id/radio_group"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_toRightOf="@+id/regs_gender"
+                android:layout_below="@id/regs_dob"
+                android:layout_marginLeft="@dimen/_5sdp"
+                >
         <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/regs_male_radio"
-            android:layout_toRightOf="@+id/regs_gender"
-            android:layout_below="@id/regs_dob"
-            android:layout_marginLeft="@dimen/_5sdp"
+
             android:fontFamily="@font/montserrat_medium"
             android:text="Male"
             android:textSize="@dimen/_12sdp"/>
@@ -112,9 +119,10 @@
                 android:layout_marginLeft="@dimen/_5sdp"
                 android:text="Others"
                 android:textSize="@dimen/_12sdp"/>
+            </RadioGroup>
 
         <EditText
-            android:layout_below="@id/regs_others_radio"
+            android:layout_below="@id/radio_group"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/regs_email"
@@ -210,7 +218,18 @@
                 android:layout_marginLeft="@dimen/_25sdp"
                 android:layout_marginTop="@dimen/_10sdp"
                 android:layout_marginBottom="@dimen/_20sdp"
-                android:background="@drawable/upload_pic" />
+                android:background="@drawable/upload_pic"
+                android:visibility="visible"/>
+            <ImageView
+                android:id="@+id/regs_profile"
+                android:layout_width="@dimen/_50sdp"
+                android:layout_height="@dimen/_50sdp"
+                android:layout_below="@id/regs_doctor_name"
+                android:layout_marginLeft="@dimen/_25sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginBottom="@dimen/_20sdp"
+                android:background="@drawable/upload_pic"
+                android:visibility="invisible"/>
 
             <TextView
                 android:layout_width="wrap_content"

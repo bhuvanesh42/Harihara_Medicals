@@ -3,6 +3,11 @@
     package="com.example.harihara_medicals">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-feature
+        android:name="android.hardware.camera.ar"
+        android:required="true" />
 
     <application
         android:allowBackup="true"
@@ -11,7 +16,22 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".My_appointment"></activity>
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="com.example.harihara_medicals"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/provider_path"/>
+        </provider>
+        <activity android:name=".Ar_product"></activity>
+
+        <meta-data
+            android:name="com.google.ar.core"
+            android:value="required" />
+
+        <activity android:name=".My_appointment" />
         <activity android:name=".My_order_activity" />
         <activity android:name=".BookAppointment" />
         <activity android:name=".General_doctor" />
@@ -20,7 +40,6 @@
         <activity android:name=".Startpage">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
