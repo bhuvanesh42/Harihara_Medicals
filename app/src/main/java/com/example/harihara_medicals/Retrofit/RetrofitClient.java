@@ -1,4 +1,4 @@
-package com.example.harihara_medicals;
+package com.example.harihara_medicals.Retrofit;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;

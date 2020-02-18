@@ -1,17 +1,19 @@
-package com.example.harihara_medicals;
+package com.example.harihara_medicals.Adapters;
 
 import android.content.Context;
 import android.content.Intent;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.harihara_medicals.Doctor_appoinment;
+import com.example.harihara_medicals.Model.Doctor_list;
+import com.example.harihara_medicals.R;
 
 import java.util.ArrayList;
 
@@ -49,7 +51,7 @@ public class Doctor_list_adapter extends RecyclerView.Adapter<Doctor_list_adapte
                 String drnum=doctor_listArrayList.get(position).getDoctor_num();
                 /*String drfee=doctor_listArrayList.get(position).getDoctor_fees();
                 String drexp=doctor_listArrayList.get(position).getDoctor_exprience();*/
-                Intent intent=new Intent(v.getContext(),Doctor_appoinment.class);
+                Intent intent=new Intent(v.getContext(), Doctor_appoinment.class);
                 intent.putExtra("Dr_name",drname);
                 intent.putExtra("Dr_spc",drspc);
                 intent.putExtra("Dr_address",draddress);

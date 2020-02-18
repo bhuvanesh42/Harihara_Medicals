@@ -1,4 +1,4 @@
-package com.example.harihara_medicals;
+package com.example.harihara_medicals.Model;
 
 public class Reminder_list {
     private   String doctor_appointment,doctor_time,medicien,medicien_time,visit_medical,visit_time;

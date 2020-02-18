@@ -1,4 +1,4 @@
-package com.example.harihara_medicals;
+package com.example.harihara_medicals.Retrofit;
 
 import android.media.Image;
 
@@ -50,6 +50,8 @@ public interface Productapi {
             @Field("pname") String pname,
             @Field("pcount") String pcount,
             @Field("price") String price);
+    @GET("cart.php")
+    Call<String> getItem();
     @Multipart
     @POST("register.php")
     Call<String> getResgister(//@Part("image\"; filename=\"myfile.jpg\" ") RequestBody requestFile,

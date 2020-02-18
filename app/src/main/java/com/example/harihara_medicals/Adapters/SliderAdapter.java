@@ -1,7 +1,6 @@
-package com.example.harihara_medicals;
+package com.example.harihara_medicals.Adapters;
 
 import android.content.Context;
-import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,6 +9,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
+import com.example.harihara_medicals.R;
 import com.smarteist.autoimageslider.SliderViewAdapter;
 public class SliderAdapter extends SliderViewAdapter<SliderAdapter.SliderAdapterVH> {
     private Context context;
@@ -39,7 +39,6 @@ public class SliderAdapter extends SliderViewAdapter<SliderAdapter.SliderAdapter
                 Toast.makeText(context, "This is item in position " + position, Toast.LENGTH_SHORT).show();
             }
         });
-
 
         switch (position) {
             case 0:

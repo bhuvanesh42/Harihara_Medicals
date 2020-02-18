@@ -1,19 +1,14 @@
 package com.example.harihara_medicals.ui.Calender;
 
-import android.app.AlertDialog;
 import android.app.DatePickerDialog;
 import android.app.Dialog;
 import android.app.TimePickerDialog;
-import android.content.Context;
-import android.content.Intent;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
-import android.os.Handler;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.CalendarView;
 import android.widget.DatePicker;
 import android.widget.EditText;
@@ -26,16 +21,12 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.harihara_medicals.ApiUtils;
-import com.example.harihara_medicals.BookAppointment;
+import com.example.harihara_medicals.Retrofit.ApiUtils;
 import com.example.harihara_medicals.DbHander;
-import com.example.harihara_medicals.Doctor_list;
-import com.example.harihara_medicals.Doctor_list_adapter;
-import com.example.harihara_medicals.Productapi;
+import com.example.harihara_medicals.Retrofit.Productapi;
 import com.example.harihara_medicals.R;
-import com.example.harihara_medicals.Reminder_list;
-import com.example.harihara_medicals.Reminder_list_Adaptor;
-import com.example.harihara_medicals.regisration_page;
+import com.example.harihara_medicals.Model.Reminder_list;
+import com.example.harihara_medicals.Adapters.Reminder_list_Adaptor;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import org.json.JSONArray;

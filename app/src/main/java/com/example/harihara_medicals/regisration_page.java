@@ -6,18 +6,15 @@ import androidx.core.content.ContextCompat;
 
 import android.Manifest;
 import android.app.DatePickerDialog;
-import android.app.Dialog;
 import android.app.ProgressDialog;
 import android.content.CursorLoader;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.database.Cursor;
 import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
-import android.os.Environment;
 import android.provider.DocumentsContract;
 import android.provider.MediaStore;
 import android.provider.Settings;
@@ -27,10 +24,10 @@ import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.RadioButton;
 import android.widget.RadioGroup;
-import android.widget.TextView;
 import android.widget.Toast;
+
+import com.example.harihara_medicals.Retrofit.ApiUtils;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -313,7 +310,7 @@ public class regisration_page extends AppCompatActivity {
         RequestBody requestFile = RequestBody.create(MediaType.parse("multipart/form-data"), file);
         MultipartBody.Part body = MultipartBody.Part.createFormData("image", file.getName(),requestFile);
 
-        Call<String> call=ApiUtils.getScalarProductapi().getResgister(body,f_name,l_name,d_o_b,gen,e_mail,user_address,h_eight,w_eight,sugarlevel,d_name,bp,bp);
+        Call<String> call= ApiUtils.getScalarProductapi().getResgister(body,f_name,l_name,d_o_b,gen,e_mail,user_address,h_eight,w_eight,sugarlevel,d_name,bp,bp);
         //Call<String> call=ApiUtils.getProductapi().getResgister(f_name,l_name,d_o_b,gen,e_mail,user_address,h_eight,w_eight,sugarlevel,d_name,bp,bp,requestFile);
         //Call<Myresponse> call=ApiUtils.getProductapi().getResgister(f_name,l_name,d_o_b,gen,e_mail,user_address,h_eight,w_eight,sugarlevel,d_name,bp,bp);
         //Call<String> call=ApiUtils.getScalarProductapi().getResgister(f_name,l_name,d_o_b,gen,e_mail,user_address,h_eight,w_eight,sugarlevel,d_name,bp,bp);

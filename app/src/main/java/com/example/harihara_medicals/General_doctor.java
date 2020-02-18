@@ -1,22 +1,21 @@
 package com.example.harihara_medicals;
 
-import android.content.Intent;
 import android.content.res.ColorStateList;
 import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
-import android.os.Handler;
 import android.util.Log;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ProgressBar;
-import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.harihara_medicals.Adapters.Doctor_list_adapter;
+import com.example.harihara_medicals.Model.Doctor_list;
+import com.example.harihara_medicals.Retrofit.Productapi;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -31,7 +30,7 @@ import retrofit2.Retrofit;
 import retrofit2.converter.scalars.ScalarsConverterFactory;
 
 public class General_doctor extends AppCompatActivity {
-    private  Doctor_list_adapter doctor_list_adapter;
+    private Doctor_list_adapter doctor_list_adapter;
     private RecyclerView recyclerView;
     ProgressBar progressBar;
 

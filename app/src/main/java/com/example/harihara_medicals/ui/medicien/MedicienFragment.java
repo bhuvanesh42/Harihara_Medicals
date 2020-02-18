@@ -11,8 +11,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.example.harihara_medicals.MedicienAdapter;
-import com.example.harihara_medicals.Medicien_list;
+import com.example.harihara_medicals.Adapters.MedicienAdapter;
+import com.example.harihara_medicals.Model.Medicien_list;
 import com.example.harihara_medicals.R;
 
 public class MedicienFragment extends Fragment {

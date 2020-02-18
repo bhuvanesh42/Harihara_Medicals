@@ -1,7 +1,6 @@
-package com.example.harihara_medicals;
+package com.example.harihara_medicals.Adapters;
 
 import android.content.Context;
-import android.content.Intent;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,11 +13,10 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import java.util.ArrayList;
+import com.example.harihara_medicals.Model.Medicien_list;
+import com.example.harihara_medicals.R;
 
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
+import java.util.ArrayList;
 
 public class MedicienAdapter extends RecyclerView.Adapter<MedicienAdapter.ViewHolder> {
     private LayoutInflater inflater;
@@ -59,6 +57,7 @@ public class MedicienAdapter extends RecyclerView.Adapter<MedicienAdapter.ViewHo
                     count++;
                     holder.medicien_counts.setText(String.valueOf(count));
                     medicienlistArrayList.get(position).setMedi_count(count);
+                    log("Count = "+medicienlistArrayList.get(position).getMedi_count());
                 } catch (NumberFormatException e) {
                     e.printStackTrace();
                 }
@@ -100,8 +99,9 @@ public class MedicienAdapter extends RecyclerView.Adapter<MedicienAdapter.ViewHo
 
 
     }
-
-
+    void log(String message){
+        Log.e(getClass().getSimpleName(),message);
+    }
     @Override
     public int getItemCount() {
         return medicienlistArrayList.size();

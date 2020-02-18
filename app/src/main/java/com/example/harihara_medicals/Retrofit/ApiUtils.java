@@ -1,4 +1,4 @@
-package com.example.harihara_medicals;
+package com.example.harihara_medicals.Retrofit;
 
 public class ApiUtils {
     private ApiUtils(){}

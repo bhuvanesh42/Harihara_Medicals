@@ -4,10 +4,17 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.example.harihara_medicals.Adapters.MedicienAdapter;
+import com.example.harihara_medicals.Model.Medicien_list;
+import com.example.harihara_medicals.Retrofit.ApiUtils;
+import com.example.harihara_medicals.Retrofit.Productapi;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -25,6 +32,7 @@ public class Medicine extends AppCompatActivity {
     public RecyclerView recyclerView;
     public MedicienAdapter medicienAdapter;
     TextView textOne;
+    ImageView cart;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,6 +40,13 @@ public class Medicine extends AppCompatActivity {
 
         textOne = findViewById(R.id.textOne);
         recyclerView = findViewById(R.id.recy);
+        cart=findViewById(R.id.cart_item);
+        cart.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(Medicine.this,Cartpage.class));
+            }
+        });
         fetchJSON();
         Log.d("res","Medicien");
 
@@ -101,7 +116,8 @@ public class Medicine extends AppCompatActivity {
                             textOne.setText(String.valueOf(count_item));
                             textOne.setVisibility(View.VISIBLE);
                             log("cart_count = "+count_item);
-                            //sendpost(medicienlistArrayList.get(position).getMedicien_name(),medicienlistArrayList.get(position).getMedicien_count().toString(),medicienlistArrayList.get(position).getMedicien_price());
+                            log("Count = "+medicienlistArrayList.get(position).getMedi_count());
+                            sendpost(medicienlistArrayList.get(position).getMedicien_name(), String.valueOf(medicienlistArrayList.get(position).getMedi_count()),medicienlistArrayList.get(position).getMedicien_price());
                         } catch (NumberFormatException e) {
                             e.printStackTrace();
                         }
@@ -117,7 +133,7 @@ public class Medicine extends AppCompatActivity {
     private void sendpost(String pname, String pcount, String price) {
         //Log.e("data_inserted","cart added");
 
-        Call<String> call=ApiUtils.getProductapi().getCart(pname,pcount,price);
+        Call<String> call= ApiUtils.getProductapi().getCart(pname,pcount,price);
         // Log.d("data_failed","nope");
         call.enqueue(new Callback<String>() {
             @Override

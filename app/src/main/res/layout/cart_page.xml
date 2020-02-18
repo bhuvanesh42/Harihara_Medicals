@@ -96,7 +96,8 @@
         android:paddingRight="@dimen/_40sdp"
         android:paddingLeft="@dimen/_40sdp"
         android:textColor="@color/colorwhite"
-        android:background="@drawable/btnbg"/>
+        android:background="@drawable/btnbg"
+        android:layout_marginBottom="@dimen/_10sdp"/>
         </RelativeLayout>
     </ScrollView>
 </RelativeLayout>

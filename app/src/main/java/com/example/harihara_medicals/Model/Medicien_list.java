@@ -1,4 +1,4 @@
-package com.example.harihara_medicals;
+package com.example.harihara_medicals.Model;
 
 public class Medicien_list {
     private String medicien_name,medicien_count,medicien_price, medicien_addto_cart, medicien_sub, medicien_add;

@@ -6,7 +6,10 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 import android.util.Log;
-import android.view.View;
+
+import com.example.harihara_medicals.Adapters.My_appoinment_list_adaptor;
+import com.example.harihara_medicals.Model.My_appoinment_list;
+import com.example.harihara_medicals.Retrofit.Productapi;
 
 import org.json.JSONArray;
 import org.json.JSONException;

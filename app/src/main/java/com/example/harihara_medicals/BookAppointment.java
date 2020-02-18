@@ -12,34 +12,29 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CalendarView;
-import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.Toast;
 
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
+import com.example.harihara_medicals.Retrofit.ApiUtils;
+import com.example.harihara_medicals.Retrofit.Productapi;
 
 import java.io.IOException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
-import java.util.concurrent.TimeoutException;
 
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
-import retrofit2.Retrofit;
-import retrofit2.converter.scalars.ScalarsConverterFactory;
 
 public class BookAppointment extends AppCompatActivity {
     Button book_appointment;
     TextView dr_name,dr_spc,dr_fee,dr_ex,cal_date;
     CalendarView dr_date;
     TextView settime;
-    private  Productapi productapi;
+    private Productapi productapi;
 
 
     @Override
@@ -47,7 +42,7 @@ public class BookAppointment extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.book_appointment);
         book_appointment=findViewById(R.id.book_appointment);
-        productapi=ApiUtils.getProductapi();
+        productapi= ApiUtils.getProductapi();
         book_appointment.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
