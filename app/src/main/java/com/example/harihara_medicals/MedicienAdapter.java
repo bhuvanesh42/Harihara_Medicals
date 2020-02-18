@@ -23,7 +23,7 @@ import retrofit2.Response;
 public class MedicienAdapter extends RecyclerView.Adapter<MedicienAdapter.ViewHolder> {
     private LayoutInflater inflater;
     public ArrayList<Medicien_list> medicienlistArrayList;
-
+    private static OnClickListener onClickListener;
     public MedicienAdapter( Context mctx,ArrayList<Medicien_list> medicienlistArrayList){
         inflater=LayoutInflater.from(mctx);
         this.medicienlistArrayList=medicienlistArrayList;
@@ -47,17 +47,18 @@ public class MedicienAdapter extends RecyclerView.Adapter<MedicienAdapter.ViewHo
         holder.medicien_prices.setText("Rs:"+medicienlistArrayList.get(position).getMedicien_price());
         holder.medicien_names.setText(medicienlistArrayList.get(position).getMedicien_name());
         //holder.medicien_count.setText(medicienlistArrayList.get(position).getMedicien_count());
-        final  int[] present_count={1};
-        final  int[] count_item={0};
-         holder.medicien_counts.setText(String.valueOf(present_count[0]));
+        //final  int[] present_count={1};
+         holder.medicien_counts.setText(String.valueOf(medicienlistArrayList.get(position).getMedi_count()));
         holder.medicien_adds.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 try {
+                    int count;
                     String presentValStr=holder.medicien_counts.getText().toString();
-                    present_count[0]=Integer.parseInt(presentValStr);
-                    present_count[0]++;
-                    holder.medicien_counts.setText(String.valueOf(present_count[0]));
+                    count=Integer.parseInt(presentValStr);
+                    count++;
+                    holder.medicien_counts.setText(String.valueOf(count));
+                    medicienlistArrayList.get(position).setMedi_count(count);
                 } catch (NumberFormatException e) {
                     e.printStackTrace();
                 }
@@ -67,69 +68,47 @@ public class MedicienAdapter extends RecyclerView.Adapter<MedicienAdapter.ViewHo
             @Override
             public void onClick(View v) {
                 try {
+                    int count;
                     String presentValStr=holder.medicien_counts.getText().toString();
-                    present_count[0]=Integer.parseInt(presentValStr);
+                    count=Integer.parseInt(presentValStr);
                     if (presentValStr.equalsIgnoreCase(String.valueOf(Integer.parseInt("1")))){
                         Toast.makeText(v.getContext(), "can't less the 1", Toast.LENGTH_SHORT).show();
                     }else {
-                        present_count[0]--;
+                        count--;
                     }
-                    holder.medicien_counts.setText(String.valueOf(present_count[0]));
+                    holder.medicien_counts.setText(String.valueOf(count));
+                    medicienlistArrayList.get(position).setMedi_count(count);
                 } catch (NumberFormatException e) {
                     e.printStackTrace();
                 }
             }
         });
+/*
         holder.medicien_addcards.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-               /* String tablet_name=holder.medicien_names.getText().toString();
-                String tablet_price=holder.medicien_prices.getText().toString();
-                String tablet_count=holder.medicien_counts.getText().toString();*/
-                /*Intent intent=new Intent(v.getContext(),Cartpage.class);
-                intent.putExtra("tablet_name",tablet_name);
-                intent.putExtra("tablet_price",tablet_price);
-                intent.putExtra("tablet_count",tablet_count);
-                v.getContext().startActivity(intent);*/
-                Log.e("cart","yes");
+                int count_item=0;
+                count_item++;
 
-
-                count_item[0]++;
-                holder.cart_count.setText(String.valueOf(count_item[0]));
+                holder.cart_count.setText(String.valueOf(count_item));
                 holder.cart_count.setVisibility(View.VISIBLE);
                 sendpost(holder.medicien_names.getText().toString(),holder.medicien_counts.getText().toString(),holder.medicien_prices.getText().toString());
             }
         });
+*/
 
 
 
     }
 
-    private void sendpost(String pname, String pcount, String price) {
-        //Log.e("data_inserted","cart added");
-
-        Call<String> call=ApiUtils.getProductapi().getCart(pname,pcount,price);
-       // Log.d("data_failed","nope");
-        call.enqueue(new Callback<String>() {
-            @Override
-            public void onResponse(Call<String> call, Response<String> response) {
-                Log.e("data_inserted","cart added");
-            }
-
-            @Override
-            public void onFailure(Call<String> call, Throwable t) {
-                Log.e("failed",t.getMessage());
-            }
-        });
-    }
 
     @Override
     public int getItemCount() {
         return medicienlistArrayList.size();
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder {
-        public TextView medicien_names,medicien_prices,medicien_counts,medicien_adds,medicien_subs,cart_count;
+    public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
+        public TextView medicien_names,medicien_prices,medicien_counts,medicien_adds,medicien_subs;//,cart_count;
         Button medicien_addcards;
 
 
@@ -141,11 +120,21 @@ public class MedicienAdapter extends RecyclerView.Adapter<MedicienAdapter.ViewHo
             medicien_addcards=itemView.findViewById(R.id.medicine_add_cart);
             medicien_counts=(EditText) itemView.findViewById(R.id.medicine_count);
             medicien_prices=(TextView) itemView.findViewById(R.id.medicine_price);
-            cart_count=itemView.findViewById(R.id.textOne);
-
-
-
-
+            //cart_count=itemView.findViewById(R.id.textOne);
+            medicien_addcards.setOnClickListener(this);
+        }
+        @Override
+        public void onClick(View v) {
+            onClickListener.onItemClick(getAdapterPosition(), v);
         }
     }
+    public void setOnItemClickListener(OnClickListener onClickListener) {
+        MedicienAdapter.onClickListener = onClickListener;
+    }
+
+    public interface OnClickListener {
+        void onItemClick(int position, View v);
+    }
+
+
 }

@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.TextView;
 
 import org.json.JSONArray;
@@ -23,16 +24,16 @@ import retrofit2.converter.scalars.ScalarsConverterFactory;
 public class Medicine extends AppCompatActivity {
     public RecyclerView recyclerView;
     public MedicienAdapter medicienAdapter;
+    TextView textOne;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_medicine);
 
+        textOne = findViewById(R.id.textOne);
         recyclerView = findViewById(R.id.recy);
         fetchJSON();
         Log.d("res","Medicien");
-
-
 
 
 
@@ -89,12 +90,48 @@ public class Medicine extends AppCompatActivity {
                 medicienAdapter=new MedicienAdapter(this,medicienlistArrayList);
                 recyclerView.setAdapter(medicienAdapter);
                 recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext(),LinearLayoutManager.VERTICAL,false));
+                medicienAdapter.setOnItemClickListener(new MedicienAdapter.OnClickListener() {
+                    @Override
+                    public void onItemClick(int position, View v) {
+                        try {
+                            int count_item;
+                            String presentValStr=textOne.getText().toString();
+                            count_item=Integer.parseInt(presentValStr);
+                            count_item++;
+                            textOne.setText(String.valueOf(count_item));
+                            textOne.setVisibility(View.VISIBLE);
+                            log("cart_count = "+count_item);
+                            //sendpost(medicienlistArrayList.get(position).getMedicien_name(),medicienlistArrayList.get(position).getMedicien_count().toString(),medicienlistArrayList.get(position).getMedicien_price());
+                        } catch (NumberFormatException e) {
+                            e.printStackTrace();
+                        }
+                    }
+
+                });
 
 
         } catch (JSONException e) {
             e.printStackTrace();
         }
     }
+    private void sendpost(String pname, String pcount, String price) {
+        //Log.e("data_inserted","cart added");
+
+        Call<String> call=ApiUtils.getProductapi().getCart(pname,pcount,price);
+        // Log.d("data_failed","nope");
+        call.enqueue(new Callback<String>() {
+            @Override
+            public void onResponse(Call<String> call, Response<String> response) {
+                Log.e("data_inserted","cart added");
+            }
+
+            @Override
+            public void onFailure(Call<String> call, Throwable t) {
+                Log.e("failed",t.getMessage());
+            }
+        });
+    }
+
     private void log(String message) {
         Log.e(getClass().getSimpleName(),message);
     }

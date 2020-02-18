@@ -3,6 +3,14 @@ package com.example.harihara_medicals;
 public class Medicien_list {
     private String medicien_name,medicien_count,medicien_price, medicien_addto_cart, medicien_sub, medicien_add;
 
+    int medi_count=1;
+    public int getMedi_count() {
+        return medi_count;
+    }
+
+    public void setMedi_count(int medi_count) {
+        this.medi_count = medi_count;
+    }
 
 
     public String getMedicien_name() {
