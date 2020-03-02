@@ -44,5 +44,7 @@
     <string name="title_orders">Orders</string>
     <string name="title_order_ready">Order Ready</string>
     <string name="title_order_complete">Order Complete</string>
+    <string name="what_s_on_your_mind">Enter your query</string>
+    <string name="menu_refresh">Refresh</string>
 
 </resources>

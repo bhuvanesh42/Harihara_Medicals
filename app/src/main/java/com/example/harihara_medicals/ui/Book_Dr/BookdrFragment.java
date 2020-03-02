@@ -10,7 +10,7 @@ import android.widget.Button;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
-import com.example.harihara_medicals.General_doctor;
+import com.example.harihara_medicals.Doctor.General_doctor;
 import com.example.harihara_medicals.R;
 
 public class BookdrFragment extends Fragment {

@@ -1,4 +1,4 @@
-package com.example.harihara_medicals;
+package com.example.harihara_medicals.Doctor;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -7,6 +7,8 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.harihara_medicals.R;
 
 public class Doctor_appoinment  extends AppCompatActivity {
     TextView app_dr_name,app_dr_spc,app_dr_address,app_dr_num,app_dr_num2;

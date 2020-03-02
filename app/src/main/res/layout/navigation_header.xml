@@ -41,4 +41,5 @@
         android:layout_toRightOf="@id/navi_img"
         android:fontFamily="@font/montserrat_medium"/>
 
+
 </RelativeLayout>

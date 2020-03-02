@@ -1,6 +1,7 @@
 package com.example.harihara_medicals.ui.home;
 
 import android.app.Dialog;
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
@@ -21,6 +22,7 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
 import com.example.harihara_medicals.HomePageActivity;
+import com.example.harihara_medicals.chatbot.LiveChatBot;
 import com.example.harihara_medicals.R;
 import com.example.harihara_medicals.Adapters.SliderAdapter;
 import com.example.harihara_medicals.ui.Book_Dr.BookdrFragment;
@@ -34,7 +36,7 @@ public class HomeFragment extends Fragment {
     private HomeViewModel homeViewModel;
     SliderView sliderView;
     TextView text1;
-    Button btn1,btn2,btn_menu;
+    Button btn1,btn2,btn_menu,live_chat;
     ImageView img1,img2,img3,img4,home_menu;
     RelativeLayout layout;
 
@@ -146,6 +148,13 @@ public class HomeFragment extends Fragment {
                 img1.startAnimation(animation1);
                 Animation animation2 = AnimationUtils.loadAnimation(getContext(), R.anim.move_left);
                 text1.startAnimation(animation2);*/
+            }
+        });
+        live_chat=root.findViewById(R.id.home_btn_livechat);
+        live_chat.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getActivity(), LiveChatBot.class));
             }
         });
 

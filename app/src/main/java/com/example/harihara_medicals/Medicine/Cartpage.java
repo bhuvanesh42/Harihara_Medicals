@@ -1,4 +1,4 @@
-package com.example.harihara_medicals;
+package com.example.harihara_medicals.Medicine;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -16,6 +16,7 @@ import com.example.harihara_medicals.Adapters.MedicienAdapter;
 import com.example.harihara_medicals.Model.Cart_list;
 import com.example.harihara_medicals.Model.Doctor_list;
 import com.example.harihara_medicals.Model.Medicien_list;
+import com.example.harihara_medicals.R;
 import com.example.harihara_medicals.Retrofit.Productapi;
 
 import org.json.JSONArray;

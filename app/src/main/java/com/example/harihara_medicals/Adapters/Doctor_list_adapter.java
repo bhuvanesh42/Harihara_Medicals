@@ -11,7 +11,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.harihara_medicals.Doctor_appoinment;
+import com.example.harihara_medicals.Doctor.Doctor_appoinment;
 import com.example.harihara_medicals.Model.Doctor_list;
 import com.example.harihara_medicals.R;
 

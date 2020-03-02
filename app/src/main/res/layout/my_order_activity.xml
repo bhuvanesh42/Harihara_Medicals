@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".My_order_activity"
+    tools:context=".Medicine.My_order_activity"
     android:padding="10dp">
     <TextView
         android:id="@+id/my_order_text"

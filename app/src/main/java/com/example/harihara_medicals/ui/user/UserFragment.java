@@ -1,7 +1,5 @@
 package com.example.harihara_medicals.ui.user;
 
-import androidx.lifecycle.ViewModelProviders;
-
 import android.app.AlertDialog;
 import android.content.ActivityNotFoundException;
 import android.content.DialogInterface;
@@ -21,10 +19,9 @@ import android.widget.TextView;
 
 import com.example.harihara_medicals.Edit_details;
 import com.example.harihara_medicals.Loginpage;
-import com.example.harihara_medicals.MedicalRecords;
+import com.example.harihara_medicals.Medicine.MedicalRecords;
 import com.example.harihara_medicals.R;
 import com.example.harihara_medicals.Startpage;
-import com.example.harihara_medicals.ui.home.HomeFragment;
 import com.google.firebase.auth.FirebaseAuth;
 
 import java.util.Locale;

@@ -1,8 +1,5 @@
 package com.example.harihara_medicals.ui.address;
 
-import androidx.fragment.app.FragmentTransaction;
-import androidx.lifecycle.ViewModelProviders;
-
 import android.content.Intent;
 import android.os.Bundle;
 
@@ -15,10 +12,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
-import com.example.harihara_medicals.Payment;
 import com.example.harihara_medicals.R;
-import com.example.harihara_medicals.orderconformation;
-import com.example.harihara_medicals.ui.cart.CartFragment;
+import com.example.harihara_medicals.Medicine.orderconformation;
 
 public class AddressFragment extends Fragment {
 

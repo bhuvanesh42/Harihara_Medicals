@@ -1,4 +1,4 @@
-package com.example.harihara_medicals;
+package com.example.harihara_medicals.Doctor;
 
 import android.content.res.ColorStateList;
 import android.graphics.Color;
@@ -15,6 +15,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.harihara_medicals.Adapters.Doctor_list_adapter;
 import com.example.harihara_medicals.Model.Doctor_list;
+import com.example.harihara_medicals.R;
 import com.example.harihara_medicals.Retrofit.Productapi;
 
 import org.json.JSONArray;

@@ -5,8 +5,6 @@ import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,11 +13,8 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import com.example.harihara_medicals.Ar_product;
-import com.example.harihara_medicals.Medicine;
+import com.example.harihara_medicals.Medicine.Medicine;
 import com.example.harihara_medicals.R;
-import com.example.harihara_medicals.ui.Calender.CalenderFragment;
-import com.example.harihara_medicals.ui.cart.CartFragment;
-import com.example.harihara_medicals.ui.medicien.MedicienFragment;
 
 public class ProductFragment2 extends Fragment {
 

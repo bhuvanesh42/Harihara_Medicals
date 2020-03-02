@@ -1,4 +1,4 @@
-package com.example.harihara_medicals;
+package com.example.harihara_medicals.Doctor;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -9,6 +9,7 @@ import android.util.Log;
 
 import com.example.harihara_medicals.Adapters.My_appoinment_list_adaptor;
 import com.example.harihara_medicals.Model.My_appoinment_list;
+import com.example.harihara_medicals.R;
 import com.example.harihara_medicals.Retrofit.Productapi;
 
 import org.json.JSONArray;

@@ -1,4 +1,4 @@
-package com.example.harihara_medicals;
+package com.example.harihara_medicals.Doctor;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -16,6 +16,8 @@ import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.Toast;
 
+import com.example.harihara_medicals.HomePageActivity;
+import com.example.harihara_medicals.R;
 import com.example.harihara_medicals.Retrofit.ApiUtils;
 import com.example.harihara_medicals.Retrofit.Productapi;
 
