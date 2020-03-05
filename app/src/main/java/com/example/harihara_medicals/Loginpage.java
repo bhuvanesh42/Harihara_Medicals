@@ -55,7 +55,7 @@ public class Loginpage extends AppCompatActivity {
                 }
                 editor.putString(phone,moblie);
                 editor.commit();
-                Intent intent=new Intent(Loginpage.this,otp_page.class);
+                Intent intent=new Intent(Loginpage.this, otp_page.class);
                 intent.putExtra("mobile",moblie);
                 startActivity(intent);
             }

@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "436528640318-961ajg0lrufar5f3endu9he9fedj7bvr.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.harihara_medicals",
+            "certificate_hash": "555957983a251f7c7f794b279cedd1fcb2df2a38"
+          }
+        },
+        {
           "client_id": "436528640318-c3ddfkrkqp0ll3mcv149boaj86350j72.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {

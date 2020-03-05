@@ -13,6 +13,8 @@
     <uses-permission android:name="android.permission.RECORD_AUDIO" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.SEND_SMS" />
+    <uses-permission android:name="android.permission.RECEIVE_SMS" />
 
     <uses-feature
         android:name="android.hardware.camera.ar"
@@ -27,7 +29,7 @@
         android:theme="@style/AppTheme"
         >
         <activity android:name=".chatbot.LiveChatBot"
-            android:screenOrientation="portrait">
+            android:screenOrientation="fullSensor">
 
         </activity>
         <activity android:name=".About_Harihar" />
@@ -73,7 +75,6 @@
             android:name=".HomePageActivity"
             android:label="@string/title_activity_home_page" />
         <activity android:name=".regisration_page" />
-        <activity android:name=".otp_page" />
         <activity android:name=".Loginpage" />
 
     </application>

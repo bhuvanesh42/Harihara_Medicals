@@ -63,6 +63,8 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/regs_dob"
                 android:paddingLeft="@dimen/_25sdp"
+                android:clickable="true"
+                android:focusable="false"
                 android:fontFamily="@font/montserrat_medium"
                 android:layout_marginHorizontal="@dimen/_20sdp"
                 android:hint="dd-mm-yy"

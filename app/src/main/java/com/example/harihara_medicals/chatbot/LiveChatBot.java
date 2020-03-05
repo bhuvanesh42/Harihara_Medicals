@@ -111,7 +111,7 @@ public class LiveChatBot extends AppCompatActivity {
         this.initialRequest = true;
 
 
-        int permission = ContextCompat.checkSelfPermission(this,
+        /*int permission = ContextCompat.checkSelfPermission(this,
                 Manifest.permission.RECORD_AUDIO);
 
         if (permission != PackageManager.PERMISSION_GRANTED) {
@@ -120,9 +120,9 @@ public class LiveChatBot extends AppCompatActivity {
         } else {
             Log.i(TAG, "Permission to record was already granted");
         }
+*/
 
-
-        recyclerView.addOnItemTouchListener(new RecyclerTouchListener(getApplicationContext(), recyclerView, new ClickListener() {
+        /*recyclerView.addOnItemTouchListener(new RecyclerTouchListener(getApplicationContext(), recyclerView, new ClickListener() {
             @Override
             public void onClick(View view, final int position) {
                 Message audioMessage = (Message) messageArrayList.get(position);
@@ -136,7 +136,7 @@ public class LiveChatBot extends AppCompatActivity {
                 recordMessage();
 
             }
-        }));
+        }));*/
 
         btnSend.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -147,12 +147,12 @@ public class LiveChatBot extends AppCompatActivity {
             }
         });
 
-        btnRecord.setOnClickListener(new View.OnClickListener() {
+        /*btnRecord.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 recordMessage();
             }
-        });
+        });*/
 
         createServices();
         sendMessage();
@@ -176,7 +176,7 @@ public class LiveChatBot extends AppCompatActivity {
     }
 
 
-    // Speech-to-Text Record Audio permission
+    /*// Speech-to-Text Record Audio permission
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
@@ -205,7 +205,7 @@ public class LiveChatBot extends AppCompatActivity {
         }
         // if (!permissionToRecordAccepted ) finish();
 
-    }
+    }*/
 
     protected void makeRequest() {
         ActivityCompat.requestPermissions(this,
@@ -324,7 +324,7 @@ public class LiveChatBot extends AppCompatActivity {
     }
 
 
-    //Record a message via Watson Speech to Text
+    /*//Record a message via Watson Speech to Text
     private void recordMessage() {
         if (listening != true) {
             capture = microphoneHelper.getInputStream(true);
@@ -352,7 +352,7 @@ public class LiveChatBot extends AppCompatActivity {
 
         }
     }
-
+*/
     /**
      * Check Internet Connection
      *
@@ -377,7 +377,7 @@ public class LiveChatBot extends AppCompatActivity {
 
     }
 
-    //Private Methods - Speech to Text
+   /* //Private Methods - Speech to Text
     private RecognizeOptions getRecognizeOptions(InputStream audio) {
         return new RecognizeOptions.Builder()
                 .audio(audio)
@@ -415,7 +415,7 @@ public class LiveChatBot extends AppCompatActivity {
             }
         });
     }
-
+*/
 
     private class SayTask extends AsyncTask<String, Void, String> {
         @Override
@@ -429,7 +429,7 @@ public class LiveChatBot extends AppCompatActivity {
         }
     }
 
-    //Watson Speech to Text Methods.
+   /* //Watson Speech to Text Methods.
     private class MicrophoneRecognizeDelegate extends BaseRecognizeCallback {
         @Override
         public void onTranscription(SpeechRecognitionResults speechResults) {
@@ -450,5 +450,5 @@ public class LiveChatBot extends AppCompatActivity {
             enableMicButton();
         }
 
-    }
+    }*/
 }

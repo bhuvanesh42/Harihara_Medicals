@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Switch;
@@ -29,7 +30,7 @@ import com.google.firebase.auth.PhoneAuthProvider;
 import java.util.concurrent.TimeUnit;
 
 public class otp_page extends AppCompatActivity {
-    TextView sumbitotp,resendotp;
+    TextView sumbitotp,resendotp,edt_num;
     String text;
     FirebaseAuth auth;
     EditText edtotp;
@@ -70,51 +71,17 @@ public class otp_page extends AppCompatActivity {
                 Toast.makeText(getApplicationContext(),"OTP send",Toast.LENGTH_SHORT).show();
             }
         });
+        edt_num=findViewById(R.id.otp_num_edt);
+        edt_num.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(otp_page.this,Loginpage.class));
+            }
+        });
 
     }
 
-    private void veriFicationCode(String code) {
-        //creating the credential
-        PhoneAuthCredential credential = PhoneAuthProvider.getCredential(verificationcode, code);
 
-        //signing the user
-        signInWithPhoneAuthCredential(credential);
-    }
-
-    private void signInWithPhoneAuthCredential(PhoneAuthCredential credential) {
-        auth.signInWithCredential(credential)
-                .addOnCompleteListener(otp_page.this, new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-                        if (task.isSuccessful()) {
-                            //verification successful we will start the profile activity
-                            Intent intent = new Intent(otp_page.this, regisration_page.class);
-                            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-                            startActivity(intent);
-
-                        } else {
-
-                            //verification unsuccessful.. display an error message
-
-                            String message = "Somthing is wrong, we will fix it soon...";
-
-                            if (task.getException() instanceof FirebaseAuthInvalidCredentialsException) {
-                                message = "Invalid code entered...";
-                            }
-
-                            Snackbar snackbar = Snackbar.make(findViewById(R.id.parent), message, Snackbar.LENGTH_LONG);
-                            snackbar.setAction("Dismiss", new View.OnClickListener() {
-                                @Override
-                                public void onClick(View v) {
-
-                                }
-                            });
-                            snackbar.show();
-                        }
-                    }
-                });
-
-    }
 
     private void sendVerificationCode(String mobile) {
         PhoneAuthProvider.getInstance().verifyPhoneNumber(
@@ -156,7 +123,50 @@ public class otp_page extends AppCompatActivity {
             //storing the verification id that is sent to the user
             verificationcode = s;
         }
+
     };
+    private void veriFicationCode(String code) {
+        //creating the credential
+        PhoneAuthCredential credential = PhoneAuthProvider.getCredential(verificationcode, code);
+
+        //signing the user
+        signInWithPhoneAuthCredential(credential);
+        /*try {
+            PhoneAuthCredential credential = PhoneAuthProvider.getCredential(verificationcode, code);
+            signInWithPhoneAuthCredential(credential);
+        }catch (Exception e){
+            Toast toast = Toast.makeText(getApplicationContext(), "Verification Code is wrong, try again", Toast.LENGTH_SHORT);
+            toast.setGravity(Gravity.CENTER,0,0);
+            toast.show();
+        }*/
+    }
+
+    private void signInWithPhoneAuthCredential(PhoneAuthCredential credential) {
+        auth.signInWithCredential(credential)
+                .addOnCompleteListener(otp_page.this, new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        if (task.isSuccessful()) {
+                            //verification successful we will start the profile activity
+                            Intent intent = new Intent(otp_page.this, regisration_page.class);
+                            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                            startActivity(intent);
+
+                        } else {
+
+                            //verification unsuccessful.. display an error message
+
+                            String message = "Somthing is wrong, we will fix it soon...";
+
+                            if (task.getException() instanceof FirebaseAuthInvalidCredentialsException) {
+                                message = "Invalid code entered...";
+                            }
+
+                        }
+                    }
+                });
+
+    }
 
 
 
